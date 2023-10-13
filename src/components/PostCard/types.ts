@@ -2,30 +2,32 @@ export interface IPost {
 id: string
 title: string
 desc: string
-tag_id: TagId[]
+tag_id: string[]
+tags: ITag[]
 read_count: number
 like_count: number
 comment_count: number
 updatedAt: string
 createdAt: string
 deletedAt: any
-user: User
-category: Category
+user: IUser
+category: ICategory
 }
   
-export interface TagId {
+export interface ITag {
 id: string
 name: string
 createdAt: string
 }
 
-export interface User {
+export interface IUser {
 id: string
 nickname: string
 }
 
-export interface Category {
+export interface ICategory {
 id: string
 name: string
+createdAt: string
 }
   
