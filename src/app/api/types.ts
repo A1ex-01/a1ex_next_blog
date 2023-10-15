@@ -2,7 +2,7 @@ export interface IPost {
 id: string
 title: string
 desc: string
-tag_id: string[]
+tag_id: string
 tags: ITag[]
 read_count: number
 like_count: number
@@ -30,4 +30,9 @@ id: string
 name: string
 createdAt: string
 }
-  
+
+export interface IPagination {
+    page: number
+    count: number
+    pageSize: number
+}
