@@ -1,6 +1,8 @@
+import Nav from '@/components/Nav'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +18,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+      <body className={inter.className} style={{ backgroundImage: "url('https://a1ex.vip/api/default-cover')", backgroundAttachment: "fixed", backgroundSize: 'cover' }}>
+        <div className="flex min-h-screen flex-col items-center justify-between  bg-[url('https://a1ex.vip/api/default-cover')] bg-fixed bg-cover">
+          <div className="h-screen">
+            <Nav />
+          </div>
+        </div>
+        {children}
+
+
+      </body>
+    </html >
   )
 }

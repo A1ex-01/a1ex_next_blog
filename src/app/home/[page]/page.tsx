@@ -2,6 +2,7 @@ import Image from "next/image";
 import axios from "axios";
 import { IPost, ITag } from "@/app/api/types";
 import PostList from "../_components/PostList";
+import Nav from "@/components/Nav";
 interface IData {
   posts: IPost[];
   page: number;
@@ -64,19 +65,7 @@ export async function useGetData(page: number): Promise<IData> {
 export default async function Home({ params: { page } }: { params: { page: string } }) {
   const res = await useGetData(+page);
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between  bg-[url('https://a1ex.vip/api/default-cover')] bg-fixed bg-cover">
-      <div className="h-screen">
-        <div className="w-[1240px] flex justify-between h-16">
-          <div className=" flex justify-center items-center">a1ex`s blog</div>
-          <div className="flex h-full">
-            {config.map((item) => (
-              <div key={item.name} className="px-4 hover:bg-slate-500 h-full flex justify-center items-center hover:text-cyan-400">
-                {item.name}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+    <div className="bg-[url('https://a1ex.vip/api/default-cover')] bg-fixed bg-cover">
       <PostList {...res} />
     </div>
   );
