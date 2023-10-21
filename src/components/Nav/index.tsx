@@ -9,7 +9,7 @@ const config = [
     {
         name: "归档",
         icon: "",
-        path: '/archive'
+        path: '/archive/1'
     },
     {
         name: "关于",
