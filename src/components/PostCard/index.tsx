@@ -2,7 +2,7 @@ import Image from 'next/image'
 import axios from 'axios'
 import dayjs from 'dayjs'
 import '@/app/globals.css'
-import { IPost } from '../../app/api/types'
+import { IPost } from '../../api/types'
 import Link from 'next/link'
 export default function PostCard({ post, index }: { post: IPost, index: number }) {
   return (
@@ -25,7 +25,7 @@ export default function PostCard({ post, index }: { post: IPost, index: number }
         </div>
         <div className='h-24 overflow-hidden text-[#666] my-2'>{post.desc}</div>
         <div className='flex items-center gap-2'>
-          <img className='w-8 h-8 rounded-[50%] bg-cover' src={`https://a1ex.vip/api/user/avatar/${post.user.id}`} alt="" />
+          <img className='w-8 h-8 rounded-[50%] object-cover' src={`https://a1ex.vip/api/user/avatar/${post.user.id}`} alt="" />
           <div className='text-main-color mx-1'>{post.user.nickname}</div>
           <div className='text-sm text-[#999]'>发布于 {dayjs(post.createdAt).format("YYYY-DD-MM HH:mm")}</div>
         </div>

@@ -1,4 +1,4 @@
-import { getPostDetail } from "@/app/api/post";
+import { getPostDetail } from "@/api/post";
 import Link from "next/link";
 import MarkdownIt from "markdown-it";
 import "github-markdown-css";
@@ -7,13 +7,14 @@ import markdownItTocDoneRight from "markdown-it-toc-done-right";
 import hljs from "highlight.js";
 import "highlight.js/styles/github.css";
 import "./styles.scss";
-async function getData(id) {
+import WalineWrapper from "./_components/WalineWrapper";
+async function getData(id: string) {
     return getPostDetail(id)
 }
 export default async function Post({ params }: {
     params: { id: string }
 }) {
-    const { data } = await getData(params.id)
+    const data = await getData(params.id)
     const md = new MarkdownIt({
         highlight: function (str, lang) {
             if (lang && hljs.getLanguage(lang)) {
@@ -34,13 +35,12 @@ export default async function Post({ params }: {
         listClass: "md-list", //li标签的样式名
         linkClass: "md-link", //a标签的样式名
         callback: (html: any) => {
-            console.log("🚀 a1ex~ html:", html)
             navContent = html
             //   if (tocContent.value) return;
             //   tocContent.value = html;
         },
     });
-    return (
+    return <>
         <div className="bg-white py-14 flex justify-center gap-4">
             <div className="max-w-[60vw] mx-auto markdown-body" dangerouslySetInnerHTML={{ __html: md.render(data.content_md) }}>
             </div>
@@ -49,5 +49,8 @@ export default async function Post({ params }: {
                 <div className="toc w-[20vw] right-content" dangerouslySetInnerHTML={{ __html: navContent }}></div>
             </div>
         </div>
-    )
+        <div className="bg-white py-14 flex justify-center gap-4">
+            <WalineWrapper />
+        </div>
+    </>
 }

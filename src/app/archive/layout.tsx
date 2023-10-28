@@ -1,4 +1,5 @@
 import Breadcrumb from "@/components/Breadcrumb";
+import Pagination from "@/components/Pagination";
 import Link from "next/link";
 
 export default function CategoryLayout({ children }: { children: React.ReactNode }) {

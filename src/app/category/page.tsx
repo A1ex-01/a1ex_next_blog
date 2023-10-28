@@ -1,21 +1,31 @@
 import Image from "next/image";
 import axios from "axios";
-import { ICategory, IPost, ITag } from "@/app/api/types";
+import { ICategory, IPost, ITag } from "@/api/types";
 import Breadcrumb from "@/components/Breadcrumb";
-import { getCategoryList } from "../api/category";
+import { getCategoryList } from "../../api/category";
 import MiniLink from "@/components/MiniLink";
+import { getPostList } from "../../api/post";
 interface IData {
-    categoryList: ICategory[];
+    categoryList: (ICategory & { count: number })[];
 }
 export async function useGetData(): Promise<IData> {
 
-    const { data: { rows: categoryRows } } = await getCategoryList();
-    console.log("🚀 a1ex~ categoryRows:", categoryRows)
+    const { rows: categoryRows } = await getCategoryList();
+    const data = await getPostList({
+        offset: 0,
+        limit: 100
+    })
     return {
-        categoryList: categoryRows
+        categoryList: categoryRows.map(category => {
+            return {
+                ...category,
+                count: data.rows.filter(post => post.category.id === category.id).length
+            }
+        })
     };
 }
-export default async function Catrgory() {
+export default async function Category() {
     const { categoryList } = await useGetData();
-    return categoryList.map(item => <MiniLink name={item.name} href={`/category/${item.id}`} icon="#" count={1} />)
+    return categoryList.map(item => <MiniLink name={item.name} href={`/category/${item.id}`} icon="#" count={item.count} />)
+
 }

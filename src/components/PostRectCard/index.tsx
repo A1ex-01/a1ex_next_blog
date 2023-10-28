@@ -2,7 +2,7 @@ import Image from 'next/image'
 import axios from 'axios'
 import dayjs from 'dayjs'
 import '@/app/globals.css'
-import { IPost } from '../../app/api/types'
+import { IPost } from '../../api/types'
 export default function PostCard({ post }: { post: IPost }) {
     return (
         <article key={post.id} className={'h-[420px] w-full flex flex-col border solid border-[#ccc] rounded-2xl overflow-hidden hover:scale-105 transition-all'}>

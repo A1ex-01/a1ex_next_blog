@@ -1,30 +1,24 @@
 import Image from "next/image";
 import axios from "axios";
-import { ICategory, IPost, ITag } from "@/app/api/types";
+import { ICategory, IFriend, IFriendType, IPost, ITag } from "@/api/types";
 import Breadcrumb from "@/components/Breadcrumb";
-import { getCategoryList } from "../api/category";
+import { getCategoryList } from "../../api/category";
 import MiniLink from "@/components/MiniLink";
-import { getFriendList, getFriendType } from "../api/friend";
+import { getFriendList, getFriendType } from "../../api/friend";
 import Link from "next/link";
-interface IData {
-    categoryList: ICategory[];
-}
-export async function useGetData(): Promise<IData> {
+
+export async function useGetData(): Promise<(IFriendType & { children: IFriend[] })[]> {
     const typeList = await getFriendType()
-    console.log("🚀 a1ex~ typeList:", typeList.data)
     const friendList = await getFriendList()
-    console.log("🚀 a1ex~ friendList:", friendList.data.rows)
-    const renderList = typeList.data.rows.map(item => {
-        const children = friendList.data.rows.filter(i => i.type === item.id)
-        console.log("🚀 a1ex~ children:", children)
+    return typeList.rows.map(item => {
+        const children = friendList.rows.filter(i => i.type === item.id)
         return {
             ...item,
             children
         }
     })
-    return renderList
 }
-export default async function Catrgory() {
+export default async function Friend() {
     const list = await useGetData();
     return list.map(item => <div className="w-full">
         <div className="w-full tips text-2xl pl-3 border-l-2 border-main-color border-solid bg-main-color opacity-50 py-2 text-white">{item.name}</div>

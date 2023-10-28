@@ -1,6 +1,19 @@
-import { useGetData } from "@/app/home/[page]/page"
+import { getPostListByCategory } from "@/api/post"
 import PostRectCard from "@/components/PostRectCard"
+import Breadcrumb from "@/components/Breadcrumb";
+import { getCategoryById } from "@/api/category";
+
+async function getServerData(id: string) {
+    // 获取分类名
+    const category = await getCategoryById(id)
+    console.log("🚀 a1ex~ category:", category)
+    const data = await getPostListByCategory(id)
+    return {
+        postList: data,
+        category
+    }
+}
 export default async function CategoryDetail({ params }: { params: { id: string } }) {
-    const { posts } = await useGetData(1)
-    return posts.map(item => <PostRectCard post={item} />)
+    const { postList, category } = await getServerData(params.id)
+    return  postList.map(item => <PostRectCard post={item} />)
 }
