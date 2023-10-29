@@ -50,6 +50,7 @@ const config = [
 ];
 export default function Nav() {
     const path = usePathname()
+
     return <div className="w-full z-10 relative h-16 filter-box shadow-md shadow-main-color">
         <div className="w-[1240px] flex justify-between h-full mx-auto">
             <div className=" flex justify-center items-center">a1ex`s blog</div>
