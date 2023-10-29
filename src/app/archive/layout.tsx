@@ -26,7 +26,7 @@ export default function CategoryLayout({ children }: { children: React.ReactNode
 					]}
 				/>
 				<div className="text-5xl bg-main-color text-white px-5 py-2 rounded-xl">{'archive'}</div>
-				<div className="content min-h-[100px] rounded-2xl bg-white flex flex-wrap gap-5 w-full p-10">{children}</div>
+				<div className="content min-h-[100px] rounded-2xl bg-white flex flex-col gap-5 w-full p-10">{children}</div>
 			</div>
 		</div>
 	)

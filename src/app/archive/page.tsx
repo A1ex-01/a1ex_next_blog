@@ -15,8 +15,15 @@ async function getData(id: string) {
 		limit,
 	}
 }
+async function sleep(duration: number) {
+	return new Promise(resolve => {
+		setTimeout(() => {
+			resolve(1)
+		}, duration)
+	})
+}
 export default async function Archive() {
-	const { archiveList } = await getData(1)
+	const { archiveList } = await getData('1')
 	return (
 		<article>
 			{archiveList.map(archive => (

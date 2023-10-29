@@ -3,6 +3,8 @@ import axios from 'axios'
 import dayjs from 'dayjs'
 import '@/app/globals.css'
 import { IPost } from '../../api/types'
+import CategoryIcon from '@/assets/icon/category.svg'
+import TagIcon from '@/assets/icon/tag.svg'
 import Link from 'next/link'
 export default function PostCard({ post, index }: { post: IPost; index: number }) {
 	return (
@@ -12,12 +14,16 @@ export default function PostCard({ post, index }: { post: IPost; index: number }
 			</div>
 			<div className="w-[464px] h-[382px] flex px-8 justify-center gap-1 flex-col bg-white border border-solid border-gray-200">
 				<div className="flex gap-1 items-center flex-wrap">
-					<img className="w-5 h-5" src="https://a1ex.vip/_nuxt/category.52adaaf7.svg" alt="" />
-					<div className="text-main-color">{post.category.name}</div>
+					<Image width={20} height={20} src={CategoryIcon} className="w-5 h-5" alt="categoryIcon" />
+					<Link href={`/category/${post.category.id}`} className="text-main-color">
+						{post.category.name}
+					</Link>
 					{post.tags.map(tag => (
 						<div key={tag.id} className="flex mr-3 items-center">
-							<img className="w-5 h-5 object-cover mr-2" src="https://a1ex.vip/_nuxt/tag.9943047c.svg" alt="" />
-							<div className="italic text-[#ccc]">{tag.name}</div>
+							<Image width={20} height={20} src={TagIcon} className="w-5 h-5" alt="tagIcon" />
+							<Link href={`/tag/${tag.id}`} className="italic text-[#ccc]">
+								{tag.name}
+							</Link>
 						</div>
 					))}
 				</div>

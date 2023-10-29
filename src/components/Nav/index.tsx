@@ -2,47 +2,53 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-
+import HomeIcon from '@/assets/icon/home.svg'
+import ArchiveIcon from '@/assets/icon/archive.svg'
+import AboutIcon from '@/assets/icon/about.svg'
+import CategoryIcon from '@/assets/icon/category.svg'
+import TagIcon from '@/assets/icon/tag.svg'
+import LinkIcon from '@/assets/icon/Link.svg'
+import LoginIcon from '@/assets/icon/login.svg'
 const config = [
 	{
 		name: '首页',
-		icon: 'https://a1ex.vip/_nuxt/archive.e0e29e38.svg',
+		icon: HomeIcon,
 		path: '/home/1',
 		keyword: 'home',
 	},
 	{
 		name: '归档',
-		icon: 'https://a1ex.vip/_nuxt/archive.e0e29e38.svg',
+		icon: ArchiveIcon,
 		path: '/archive/1',
 		keyword: 'archive',
 	},
 	{
 		name: '关于',
-		icon: 'https://a1ex.vip/_nuxt/archive.e0e29e38.svg',
+		icon: AboutIcon,
 		path: '/about',
 		keyword: 'about',
 	},
 	{
 		name: '分类',
-		icon: 'https://a1ex.vip/_nuxt/archive.e0e29e38.svg',
+		icon: CategoryIcon,
 		path: '/category',
 		keyword: 'category',
 	},
 	{
 		name: '标签',
-		icon: 'https://a1ex.vip/_nuxt/archive.e0e29e38.svg',
+		icon: TagIcon,
 		path: '/tag',
 		keyword: 'tag',
 	},
 	{
 		name: '友链',
-		icon: 'https://a1ex.vip/_nuxt/archive.e0e29e38.svg',
+		icon: LinkIcon,
 		path: '/friend',
 		keyword: 'friend',
 	},
 	{
 		name: '登录',
-		icon: 'https://a1ex.vip/_nuxt/archive.e0e29e38.svg',
+		icon: LoginIcon,
 		path: '/login',
 		keyword: 'login',
 	},
