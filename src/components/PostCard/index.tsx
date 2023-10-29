@@ -11,19 +11,19 @@ export default function PostCard({ post, index }: { post: IPost, index: number }
       <div className='w-[464px] h-[382px] flex px-8 justify-center gap-1 flex-col bg-white border border-solid border-gray-200'>
         <div className='flex gap-1 items-center flex-wrap'>
           <img className='w-5 h-5' src="https://a1ex.vip/_nuxt/category.52adaaf7.svg" alt="" />
-          <div>{post.category.name}</div>
-          {post.tags.map(tag => <div key={tag.id} className='flex gap-1'>
-            <img className='w-5 h-5 object-cover' src="https://a1ex.vip/_nuxt/tag.9943047c.svg" alt="" />
-            <div>{tag.name}</div>
+          <div className='text-main-color'>{post.category.name}</div>
+          {post.tags.map(tag => <div key={tag.id} className='flex mr-3 items-center'>
+            <img className='w-5 h-5 object-cover mr-2' src="https://a1ex.vip/_nuxt/tag.9943047c.svg" alt="" />
+            <div className='italic text-[#ccc]'>{tag.name}</div>
           </div>)}
         </div>
-        <Link href={`/post/${post.id}`} className="text-[22px] text-main-color">{post.title}</Link>
-        <div className='flex'>
-          <div>{post.read_count}</div>
-          <div>{post.like_count}</div>
-          <div>{post.comment_count}</div>
+        <Link href={`/post/${post.id}`} className="text-[22px] text-main-color truncate">{post.title}</Link>
+        <div className='flex gap-2 text-lg'>
+          <div><i className='mr-1 text-main-color iconfont !text-xl icon-redu'></i>{post.read_count}</div>
+          <div><i className='mr-1 text-main-color iconfont !text-xl icon-xihuan'></i>{post.like_count}</div>
+          <div><i className='mr-1 text-main-color iconfont !text-xl icon-pingluncishu'></i>{post.comment_count}</div>
         </div>
-        <div className='h-24 overflow-hidden text-[#666] my-2'>{post.desc}</div>
+        <div className='h-24 text-[#666] my-2 line-clamp-4 overflow-hidden text-ellipsis'>{post.desc}</div>
         <div className='flex items-center gap-2'>
           <img className='w-8 h-8 rounded-[50%] object-cover' src={`https://a1ex.vip/api/user/avatar/${post.user.id}`} alt="" />
           <div className='text-main-color mx-1'>{post.user.nickname}</div>

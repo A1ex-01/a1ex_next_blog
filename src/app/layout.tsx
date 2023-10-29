@@ -22,7 +22,7 @@ export default async function RootLayout({
     <html lang="en">
       <body className={inter.className} style={{ backgroundImage: "url('https://a1ex.vip/api/default-cover')", backgroundAttachment: "fixed", backgroundSize: 'cover' }}>
         <div className="flex min-h-screen flex-col items-center justify-between  bg-[url('https://a1ex.vip/api/default-cover')] bg-fixed bg-cover">
-          <div className="h-screen">
+          <div className="h-screen w-full">
             <Nav />
           </div>
         </div>
