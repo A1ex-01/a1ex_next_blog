@@ -26,6 +26,6 @@ export async function useGetData(): Promise<IData> {
 }
 export default async function Category() {
     const { categoryList } = await useGetData();
-    return categoryList.map(item => <MiniLink name={item.name} href={`/category/${item.id}`} icon="#" count={item.count} />)
+    return categoryList.map(item => <MiniLink key={item.id} name={item.name} href={`/category/${item.id}`} icon="#" count={item.count} />)
 
 }

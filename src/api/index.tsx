@@ -17,4 +17,5 @@ class AxFetch {
         }).then(res => res.json()).then(res => res.data)
     }
 }
-export default new AxFetch('https://a1ex.vip/api')
+const axFetch = new AxFetch('https://a1ex.vip/api')
+export default axFetch

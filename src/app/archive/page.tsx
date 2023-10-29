@@ -15,6 +15,6 @@ async function getData(id: string) {
 export default async function Archive() {
     const { archiveList } = await getData(1)
     return <article>
-        {archiveList.map(archive => <TimeLine archive={archive} />)}
+        {archiveList.map(archive => <TimeLine archive={archive} key={archive.title} />)}
     </article>
 }

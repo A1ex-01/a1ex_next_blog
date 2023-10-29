@@ -18,7 +18,7 @@ export default async function Archive({ params }: { params: { id: string } }) {
     const { id } = params
     const { archiveList, count, limit } = await getData(id)
     return <><article>
-        {archiveList.map(archive => <TimeLine archive={archive} />)}
+        {archiveList.map(archive => <TimeLine archive={archive} key={archive.title} />)}
     </article>
         <div className="flex justify-center w-full my-2"><Pagination pathRoot={'archive'} page={+id} count={count} pageSize={limit} /></div></>
 
