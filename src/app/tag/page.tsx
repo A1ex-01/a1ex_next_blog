@@ -26,5 +26,5 @@ async function useGetData(): Promise<IData> {
 }
 export default async function Tag() {
     const { tagList } = await useGetData();
-    return tagList.map(item => <MiniLink name={item.name} href={`/tag/${item.id}`} icon="#" count={item.count} />)
+    return tagList.map(item => <MiniLink key={item.id} name={item.name} href={`/tag/${item.id}`} icon="#" count={item.count} />)
 }

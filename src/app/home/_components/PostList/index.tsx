@@ -11,7 +11,7 @@ interface IData {
     count: number;
 }
 
-export default ({ posts, page, pageSize, count }: IData) => {
+export default function PostList({ posts, page, pageSize, count }: IData) {
     return (
         <div className="bg-white/90 w-full flex flex-col items-center py-5 gap-5">
             {posts.map((post, index) => (

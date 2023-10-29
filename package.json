@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "commit": "git-cz"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
@@ -30,7 +31,7 @@
     "styled-components": "^6.1.0"
   },
   "config": {
-    "commitzen": {
+    "commitizen": {
       "path": "cz-conventional-changelog"
     }
   },
@@ -43,6 +44,8 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8",
     "eslint-config-next": "13.5.4",
     "husky": "^8.0.3",

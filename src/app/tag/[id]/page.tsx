@@ -9,5 +9,5 @@ async function getServerData(id: string) {
 }
 export default async function TagDetail({ params }: { params: { id: string } }) {
     const { postList } = await getServerData(params.id)
-    return postList.map(item => <PostRectCard post={item} />)
+    return postList.map(item => <PostRectCard post={item} key={item.id} />)
 }
