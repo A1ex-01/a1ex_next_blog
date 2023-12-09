@@ -1,8 +1,7 @@
-import Image from 'next/image'
-import { getMeInfo } from '../../api/about'
-import MarkdownIt from 'markdown-it'
 import 'github-markdown-css'
-export async function useGetData(): Promise<{
+import MarkdownIt from 'markdown-it'
+import { getMeInfo } from '../../api/about'
+async function useGetData(): Promise<{
 	desc: string
 }> {
 	const res = await getMeInfo()
