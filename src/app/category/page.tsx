@@ -1,16 +1,13 @@
-import Image from 'next/image'
-import axios from 'axios'
-import { ICategory, IPost, ITag } from '@/api/types'
-import Breadcrumb from '@/components/Breadcrumb'
-import { getCategoryList } from '../../api/category'
+import { ICategory } from '@/api/types'
 import MiniLink from '@/components/MiniLink'
+import { getCategoryList } from '../../api/category'
 import { getPostList } from '../../api/post'
 interface IData {
 	categoryList: (ICategory & {
 		count: number
 	})[]
 }
-export async function useGetData(): Promise<IData> {
+async function useGetData(): Promise<IData> {
 	const { rows: categoryRows } = await getCategoryList()
 	const data = await getPostList({
 		offset: 0,

@@ -1,13 +1,8 @@
-import Image from 'next/image'
-import axios from 'axios'
-import { ICategory, IFriend, IFriendType, IPost, ITag } from '@/api/types'
-import Breadcrumb from '@/components/Breadcrumb'
-import { getCategoryList } from '../../api/category'
-import MiniLink from '@/components/MiniLink'
-import { getFriendList, getFriendType } from '../../api/friend'
+import { IFriend, IFriendType } from '@/api/types'
 import Link from 'next/link'
+import { getFriendList, getFriendType } from '../../api/friend'
 
-export async function useGetData(): Promise<
+async function useGetData(): Promise<
 	(IFriendType & {
 		children: IFriend[]
 	})[]
