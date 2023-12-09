@@ -2,6 +2,7 @@ import { getPostListByCategory } from '@/api/post'
 import PostRectCard from '@/components/PostRectCard'
 import Breadcrumb from '@/components/Breadcrumb'
 import { getCategoryById } from '@/api/category'
+import EmptyStatus from '@/components/EmptyStatus'
 
 async function getServerData(id: string) {
 	// 获取分类名
@@ -21,5 +22,6 @@ export default async function CategoryDetail({
 	}
 }) {
 	const { postList, category } = await getServerData(params.id)
+	if (!postList.length) return <EmptyStatus />
 	return postList.map(item => <PostRectCard post={item} key={item.id} />)
 }

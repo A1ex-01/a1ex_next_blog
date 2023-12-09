@@ -13,7 +13,7 @@ export default function TimeLine({ archive }: { archive: ISortByMonth<IPost> }) 
 			{archive.list.map((post, index) => (
 				<div key={post.id} className={`content h-[250px] flex relative items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} gap-10`}>
 					<div className="tick absolute bg-main-color left-1/2 top-0 h-full -translate-x-1/2 w-[6px]"></div>
-					<article className="flex-1 w-[0]">
+					<article className="flex-1 w-[0] relative">
 						<TimeLineCard post={post} index={index} />
 					</article>
 					<div className="flex-1 text-main-color text-lg" style={{ textAlign: index % 2 === 0 ? 'left' : 'right' }}>

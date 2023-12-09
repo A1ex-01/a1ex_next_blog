@@ -5,6 +5,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { getTagList } from '@/api/tag'
 import React, { cloneElement } from 'react'
+import Intro from '@/components/Intro'
 const inter = Inter({
 	subsets: ['latin'],
 })
@@ -26,8 +27,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 				}}
 			>
 				<div className="flex min-h-screen flex-col items-center justify-between  bg-[url('https://a1ex.vip/api/default-cover')] bg-fixed bg-cover">
-					<div className="h-screen w-full">
+					<div className="h-screen w-full relative">
 						<Nav />
+						<div className="absolute left-[15%] top-[50%] -translate-y-1/2">
+							<Intro />
+						</div>
 					</div>
 				</div>
 				{children}

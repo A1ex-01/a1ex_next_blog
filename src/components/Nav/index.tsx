@@ -1,14 +1,13 @@
 'use client'
+import LinkIcon from '@/assets/icon/Link.svg'
+import AboutIcon from '@/assets/icon/about.svg'
+import ArchiveIcon from '@/assets/icon/archive.svg'
+import CategoryIcon from '@/assets/icon/category.svg'
+import HomeIcon from '@/assets/icon/home.svg'
+import TagIcon from '@/assets/icon/tag.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import HomeIcon from '@/assets/icon/home.svg'
-import ArchiveIcon from '@/assets/icon/archive.svg'
-import AboutIcon from '@/assets/icon/about.svg'
-import CategoryIcon from '@/assets/icon/category.svg'
-import TagIcon from '@/assets/icon/tag.svg'
-import LinkIcon from '@/assets/icon/Link.svg'
-import LoginIcon from '@/assets/icon/login.svg'
 const config = [
 	{
 		name: '首页',
@@ -46,12 +45,12 @@ const config = [
 		path: '/friend',
 		keyword: 'friend',
 	},
-	{
-		name: '登录',
-		icon: LoginIcon,
-		path: '/login',
-		keyword: 'login',
-	},
+	// {
+	// 	name: '登录',
+	// 	icon: LoginIcon,
+	// 	path: '/login',
+	// 	keyword: 'login',
+	// },
 ]
 export default function Nav() {
 	const path = usePathname()

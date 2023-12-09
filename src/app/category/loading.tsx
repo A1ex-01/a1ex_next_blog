@@ -1,3 +1,5 @@
+import LoadStatus from '@/components/LoadStatus'
+
 export default function Loading() {
-	return <div>loading....</div>
+	return <LoadStatus />
 }

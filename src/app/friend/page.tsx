@@ -32,11 +32,11 @@ export default async function Friend() {
 					<Link
 						key={i.id}
 						href={i.link}
-						className="w-[30vh] flex flex-col justify-between rounded-lg border-[#ccc] border-[1px] border-l-3 border-l-main-color border-solid p-3 mt-4 mr-[3vw] hover:translate-y-[-6px] transition-all hover:shadow-black hover:shadow-sm"
+						className="w-[30vh] flex flex-col justify-between rounded-lg border-[#ccc] border-[1px] border-l-3 border-l-main-color border-solid p-3 mt-4 mr-[3vw] hover:translate-y-[-8px] transition-all hover:shadow-[#999] hover:shadow-sm"
 					>
 						<span>{i.name}</span>
 						<hr className="my-1" />
-						<span className="text-sm text-[#ccc]">{i.desc || '这货神恶魔都没留下'}</span>
+						<span className="text-sm text-[#ccc]">{i.desc || '这货什么都没留下'}</span>
 					</Link>
 				))}
 			</div>
