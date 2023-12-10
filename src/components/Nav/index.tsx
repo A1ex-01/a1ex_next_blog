@@ -5,6 +5,7 @@ import ArchiveIcon from '@/assets/icon/archive.svg'
 import CategoryIcon from '@/assets/icon/category.svg'
 import HomeIcon from '@/assets/icon/home.svg'
 import TagIcon from '@/assets/icon/tag.svg'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -46,7 +47,7 @@ const config = [
 		keyword: 'friend',
 	},
 	// {
-	// 	name: '登录',
+	// 	name: '',
 	// 	icon: LoginIcon,
 	// 	path: '/login',
 	// 	keyword: 'login',

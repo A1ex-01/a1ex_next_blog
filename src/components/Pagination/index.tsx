@@ -1,7 +1,5 @@
-import Image from 'next/image'
-import axios from 'axios'
-import '@/app/globals.css'
 import { IPagination } from '@/api/types'
+import '@/app/globals.css'
 import Link from 'next/link'
 export default function Pagination({
 	page,
@@ -9,7 +7,7 @@ export default function Pagination({
 	pageSize,
 	pathRoot = 'home',
 }: IPagination & {
-	pathRoot: string
+	pathRoot?: string
 }) {
 	const size = Math.ceil(count / pageSize)
 	return (

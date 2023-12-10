@@ -1,11 +1,12 @@
 'use client'
 import Form from '@/components/Form'
-import { useAnimate } from 'framer-motion'
-import { login } from '../../api/user'
-import { useRef, useState } from 'react'
 import Item from '@/components/Form/Item'
 import useForm from '@/components/Form/useForm'
+import { useAnimate } from 'framer-motion'
+import { useRef, useState } from 'react'
+import { login } from '../../api/user'
 export default function Login() {
+	return <h1>111</h1>
 	const [scope, animation] = useAnimate()
 	const isLogin = useRef(true)
 	const checkout = () => {
@@ -50,7 +51,7 @@ export default function Login() {
 			// message(EMessageType.DANGER, "登录失败~");
 		}
 	}
-	const [form] = useForm()
+	const [form] = useForm(1)
 	return (
 		<div
 			style={{

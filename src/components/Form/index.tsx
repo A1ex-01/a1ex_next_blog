@@ -1,7 +1,7 @@
 import { useMemo, useRef } from 'react'
-import useForm from './useForm'
-import FieldContext from './formContext'
 import Item from './Item'
+import FieldContext from './formContext'
+import useForm from './useForm'
 
 const Form = (props: { initialValues?: any; onValueChange?: any; onFinish?: any; onReset?: any; form?: any }) => {
 	const {
