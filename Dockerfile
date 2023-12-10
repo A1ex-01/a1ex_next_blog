@@ -17,4 +17,4 @@ RUN npm run build
 # 
 COPY .next ./.next
 # 启动应用程序
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "start"]
