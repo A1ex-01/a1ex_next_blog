@@ -1,12 +1,12 @@
 version: '1.0.0'
-services: 
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: next_blog
-    ports:
-      - "3000:3000"
-    volumes:
-      - .:/app
-      - /app/node_modules
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: next_blog
+        ports:
+            - '3000:3000'
+        volumes:
+            - .:/app
+            - /app/node_modules
