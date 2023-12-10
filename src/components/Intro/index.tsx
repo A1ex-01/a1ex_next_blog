@@ -1,9 +1,8 @@
 'use client'
-import Image from 'next/image'
+import Link from 'next/link.js'
 import { useEffect, useRef } from 'react'
 import Typed from 'typed.js'
 import { WrapperBox } from './style.ts'
-import Link from 'next/link.js'
 export default function Intro() {
 	const titleRef = useRef(null)
 	const nameRef = useRef(null)
