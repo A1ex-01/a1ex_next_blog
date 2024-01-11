@@ -1,6 +1,5 @@
 {
 	"name": "a1ex_next_blog",
-	"version": "0.1.0",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
