@@ -7,6 +7,9 @@ class AxFetch {
 		})
 		return fetch(`${this.baseURL}${url}?${paramsData.toString()}`, {
 			method: 'GET',
+			next: {
+				revalidate: false,
+			},
 		})
 			.then(res => res.json())
 			.then(res => res.data)
@@ -15,6 +18,9 @@ class AxFetch {
 		return fetch(`${this.baseURL}${url}`, {
 			method: 'POST',
 			body: JSON.stringify(data),
+			next: {
+				revalidate: false,
+			},
 		})
 			.then(res => res.json())
 			.then(res => res.data)
