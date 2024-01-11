@@ -20,5 +20,5 @@ class AxFetch {
 			.then(res => res.data)
 	}
 }
-const axFetch = new AxFetch('https://a1ex.vip/api')
+const axFetch = new AxFetch('http://47.116.192.237:8004')
 export default axFetch
