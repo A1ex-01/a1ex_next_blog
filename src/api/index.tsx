@@ -8,7 +8,7 @@ class AxFetch {
 		return fetch(`${this.baseURL}${url}?${paramsData.toString()}`, {
 			method: 'GET',
 			next: {
-				revalidate: false,
+				revalidate: 1,
 			},
 		})
 			.then(res => res.json())
@@ -26,5 +26,5 @@ class AxFetch {
 			.then(res => res.data)
 	}
 }
-const axFetch = new AxFetch('http://47.116.192.237:8004')
+const axFetch = new AxFetch('http://124.222.45.95:8004')
 export default axFetch
