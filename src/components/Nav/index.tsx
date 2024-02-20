@@ -5,10 +5,11 @@ import ArchiveIcon from '@/assets/icon/archive.svg'
 import CategoryIcon from '@/assets/icon/category.svg'
 import HomeIcon from '@/assets/icon/home.svg'
 import TagIcon from '@/assets/icon/tag.svg'
-
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useEffect, useRef } from 'react'
+import HomeJson from '@/assets/lottie/home.json'
 const config = [
 	{
 		name: '首页',
@@ -55,9 +56,20 @@ const config = [
 ]
 export default function Nav() {
 	const path = usePathname()
+	const ref = useRef(null)
+	console.log('🚀 a1ex~ ref:', ref)
 
+	// useEffect(() => {
+	// 	Lottie.loadAnimation({
+	// 		container: ref.current!, // the dom element that will contain the animation
+	// 		renderer: 'svg',
+	// 		loop: true,
+	// 		autoplay: true,
+	// 		path: '../../assets/lottie/home.json', // the path to the animation json
+	// 	})
+	// }, [ref])
 	return (
-		<div className="w-full z-10 relative h-16 filter-box shadow-md shadow-main-color">
+		<div className="w-full z-10 relative h-16 filter-box shadow-md shadow-main-color" ref={ref}>
 			<div className="w-[1240px] flex justify-between h-full mx-auto">
 				<div className=" flex justify-center items-center">a1ex`s blog</div>
 				<div className="flex h-full">

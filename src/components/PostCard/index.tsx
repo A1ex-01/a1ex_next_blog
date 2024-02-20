@@ -10,7 +10,7 @@ export default function PostCard({ post, index }: { post: IPost; index: number }
 	return (
 		<div key={post.id} className={'h-[475px] flex items-center' + (index % 2 === 0 ? ' flex-row' : ' flex-row-reverse')}>
 			<div className="w-[696px] h-[435px] bg-white border border-soli">
-				<img className="w-full h-full bg-cover" src={`https://a1ex.vip/api/article/cover/${post.id}`} alt="" />
+				<img className="w-full h-full object-cover" src={`https://a1ex.vip/api/article/cover/${post.id}`} alt="" />
 			</div>
 			<div className="w-[464px] h-[382px] flex px-8 justify-center gap-1 flex-col bg-white border border-solid border-gray-200">
 				<div className="flex gap-1 items-center flex-wrap">
