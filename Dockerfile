@@ -12,6 +12,8 @@ RUN npm install pnpm -g
 # 安装项目依赖
 RUN pnpm install
 
+RUN pnpm run build
+
 
 # RUN yarn run build
 # 
