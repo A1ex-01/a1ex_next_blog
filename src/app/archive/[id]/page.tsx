@@ -2,6 +2,7 @@ import { getArchiveList } from '@/api/archive'
 import TimeLine from '@/components/TimeLine'
 import { refixByMonth } from '@/utils/refixByMouth'
 import Pagination from '@/components/Pagination'
+import { redirect } from 'next/navigation'
 
 async function getData(id: string) {
   const limit = 8
@@ -25,6 +26,7 @@ export default async function Archive({
   }
 }) {
   const { id } = params
+  if (id == '1') return redirect('/archive')
   const { archiveList, count, limit } = await getData(id)
   return (
     <>

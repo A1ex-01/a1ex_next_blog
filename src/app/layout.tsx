@@ -3,11 +3,8 @@ import './globals.css'
 import '@/app/assets/var.scss'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { getTagList } from '@/api/tag'
-import React, { cloneElement } from 'react'
+import React from 'react'
 import Intro from '@/components/Intro'
-import Head from 'next/head'
-import Link from 'next/link'
 const inter = Inter({
   subsets: ['latin']
 })

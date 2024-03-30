@@ -8,7 +8,7 @@ import TagIcon from '@/assets/icon/tag.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect, useRef } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import HomeJson from '@/assets/lottie/home.json'
 const config = [
   {
@@ -54,11 +54,22 @@ const config = [
   // 	keyword: 'login',
   // },
 ]
+const headerHeight = 64
 export default function Nav() {
   const path = usePathname()
-  const ref = useRef(null)
-  console.log('🚀 a1ex~ ref:', ref)
-
+  // 固定头部
+  const [scroll, setScroll] = useState(0)
+  console.log('🚀 ~ Nav ~ scroll:', scroll)
+  const handleScroll = () => setScroll(document.documentElement.scrollTop)
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+  const isFix = useMemo(() => {
+    return scroll > headerHeight
+  }, [scroll])
   // useEffect(() => {
   // 	Lottie.loadAnimation({
   // 		container: ref.current!, // the dom element that will contain the animation
@@ -69,9 +80,17 @@ export default function Nav() {
   // 	})
   // }, [ref])
   return (
-    <div className="w-full z-10 relative h-16 filter-box shadow-md shadow-main-color" ref={ref}>
+    <div
+      className="w-full z-10 relative h-16 filter-box shadow-md shadow-main-color"
+      style={{
+        position: isFix ? 'fixed' : 'static',
+        top: 0,
+        left: 0,
+        zIndex: 999
+      }}
+    >
       <div className="w-[1240px] flex justify-between h-full mx-auto">
-        <div className=" flex justify-center items-center">a1ex`s blog</div>
+        <h1 className=" flex justify-center items-center font-[500] text-lg">a1ex`s blog</h1>
         <div className="flex h-full">
           {config.map((item) => (
             <Link

@@ -4,7 +4,8 @@
 
 @layer components {
   .filter-box {
-    @apply after:content-[''] after:absolute after:left-0 after:top-0 after:w-full after:h-full after:backdrop-blur-[16px] after:z-[-1];
+    @apply after:content-[''] after:absolute after:left-0 after:top-0 after:w-full after:h-full after:backdrop-blur-[32px] after:z-[-1];
+    transition: all 0.5;
   }
 }
 

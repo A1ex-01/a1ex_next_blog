@@ -2,6 +2,7 @@ import { getPostList } from '@/api/post'
 import { getTagList } from '@/api/tag'
 import { IPost, ITag } from '@/api/types'
 import PostList from '../_components/PostList'
+import { redirect } from 'next/navigation'
 interface IData {
   posts: IPost[]
   page: number
@@ -34,6 +35,8 @@ export default async function Home({
     page: string
   }
 }) {
+  console.log('🚀 ~ page:', page)
+  if (page == 1) return redirect('/home')
   const res = await useGetData(+page)
   return (
     <div className="bg-[url('https://a1ex.vip/api/default-cover')] bg-fixed bg-cover">
