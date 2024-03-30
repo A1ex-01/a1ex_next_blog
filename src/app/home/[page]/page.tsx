@@ -36,7 +36,7 @@ export default async function Home({
   }
 }) {
   console.log('🚀 ~ page:', page)
-  if (page == 1) return redirect('/home')
+  if (+page === 1) return redirect('/home')
   const res = await useGetData(+page)
   return (
     <div className="bg-[url('https://a1ex.vip/api/default-cover')] bg-fixed bg-cover">

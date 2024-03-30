@@ -55,17 +55,21 @@ export default class FormStore {
     console.log('🚀 a1ex~ entity:', entity)
   }
   // 注册实例
-  registerField = (entity) => {}
-  getFieldEntities = () => {}
+  // registerField = (entity) => {}
+  // getFieldEntities = () => {}
   // 通知更新
-  notifyObservers = (prevStore, nameList, info) => {}
+  // notifyObservers = (prevStore, nameList, info) => {}
 
   updateValue = (name, newValue) => {
     this.store[name] = newValue
   }
   // form actions，提交、校验、重置等方法
-  submit = () => {}
+  submit = () => {
+    console.log('🚀 ~ FormStore ~ submit:')
+  }
 
   // 重置所有字段
-  resetFields = (nameList) => {}
+  resetFields = (nameList) => {
+    console.log('🚀 ~ FormStore ~ nameList:', nameList)
+  }
 }

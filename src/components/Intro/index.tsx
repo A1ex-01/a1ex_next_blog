@@ -5,7 +5,7 @@ import Typed from 'typed.js'
 import { WrapperBox } from './style.ts'
 export default function Intro() {
   const titleRef = useRef(null)
-  const nameRef = useRef(null)
+  // const nameRef = useRef(null)
   const descRef = useRef(null)
   useEffect(() => {
     const typed = new Typed(descRef.current, {

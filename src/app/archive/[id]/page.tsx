@@ -26,7 +26,7 @@ export default async function Archive({
   }
 }) {
   const { id } = params
-  if (id == '1') return redirect('/archive')
+  if (+id === 1) return redirect('/archive')
   const { archiveList, count, limit } = await getData(id)
   return (
     <>

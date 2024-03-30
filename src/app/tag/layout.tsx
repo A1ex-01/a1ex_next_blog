@@ -1,4 +1,5 @@
 import Breadcrumb from '@/components/Breadcrumb'
+import React from 'react'
 
 export default function TagLayout({ children }: { children: React.ReactNode }) {
   return (

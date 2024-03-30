@@ -8,8 +8,8 @@ import TagIcon from '@/assets/icon/tag.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect, useMemo, useRef, useState } from 'react'
-import HomeJson from '@/assets/lottie/home.json'
+import { useEffect, useMemo, useState } from 'react'
+// import HomeJson from '@/assets/lottie/home.json'
 const config = [
   {
     name: '首页',

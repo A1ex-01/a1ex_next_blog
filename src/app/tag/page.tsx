@@ -1,7 +1,4 @@
-import Image from 'next/image'
-import axios from 'axios'
-import { ICategory, IPost, ITag } from '@/api/types'
-import Breadcrumb from '@/components/Breadcrumb'
+import { ITag } from '@/api/types'
 import MiniLink from '@/components/MiniLink'
 import { getTagList } from '../../api/tag'
 import { getPostList } from '../../api/post'

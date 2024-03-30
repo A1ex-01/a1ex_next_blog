@@ -9,6 +9,7 @@ const Form = (props: {
   onFinish?: any
   onReset?: any
   form?: any
+  children: any
 }) => {
   const {
     form, // 在外部使用 `useForm` 创建的实例
@@ -55,17 +56,17 @@ const Form = (props: {
   )
 }
 
-function FormItem({ label, placeHolder }: { label: string; placeHolder: string }) {
-  return (
-    <div className="flex flex-col h-[70px] bg-white rounded-xl py-2 px-3 w-full mb-3">
-      <div className="text-[#999] text-sm">{label}</div>
-      <input
-        type="text"
-        placeholder={placeHolder}
-        className="h-full text-[#595959] text-sm border-none border-b-main-color outline-none border-b-2"
-      />
-    </div>
-  )
-}
+// function FormItem({ label, placeHolder }: { label: string; placeHolder: string }) {
+//   return (
+//     <div className="flex flex-col h-[70px] bg-white rounded-xl py-2 px-3 w-full mb-3">
+//       <div className="text-[#999] text-sm">{label}</div>
+//       <input
+//         type="text"
+//         placeholder={placeHolder}
+//         className="h-full text-[#595959] text-sm border-none border-b-main-color outline-none border-b-2"
+//       />
+//     </div>
+//   )
+// }
 Form.Item = Item
 export default Form

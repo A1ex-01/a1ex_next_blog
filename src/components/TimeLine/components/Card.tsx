@@ -1,5 +1,4 @@
 import { IPost } from '@/api/types'
-import { ISortByMonth } from '@/utils/refixByMouth'
 import Link from 'next/link'
 import { CSSProperties } from 'styled-components'
 

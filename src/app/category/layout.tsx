@@ -1,4 +1,5 @@
 import Breadcrumb from '@/components/Breadcrumb'
+import React from 'react'
 
 export default async function CategoryLayout({ children }: { children: React.ReactNode }) {
   return (

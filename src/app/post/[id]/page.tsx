@@ -1,5 +1,4 @@
 import { getPostDetail } from '@/api/post'
-import Link from 'next/link'
 import MarkdownIt from 'markdown-it'
 import 'github-markdown-css'
 import markdownItAnchor from 'markdown-it-anchor'
@@ -26,7 +25,9 @@ export default async function Post({
           return hljs.highlight(str, {
             language: lang
           }).value
-        } catch (__) {}
+        } catch (__) {
+          console.log('🚀 ~ __:', __)
+        }
       }
 
       return '' // use external default escaping

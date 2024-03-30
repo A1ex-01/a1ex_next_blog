@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import axios from 'axios'
+// import axios from 'axios'
 import dayjs from 'dayjs'
 import '@/app/globals.css'
 import { IPost } from '../../api/types'
