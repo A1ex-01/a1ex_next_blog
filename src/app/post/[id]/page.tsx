@@ -9,65 +9,65 @@ import 'highlight.js/styles/github.css'
 import './styles.scss'
 import WalineWrapper from './_components/WalineWrapper'
 async function getData(id: string) {
-	return getPostDetail(id)
+  return getPostDetail(id)
 }
 export default async function Post({
-	params,
+  params
 }: {
-	params: {
-		id: string
-	}
+  params: {
+    id: string
+  }
 }) {
-	const data = await getData(params.id)
-	const md = new MarkdownIt({
-		highlight: function (str, lang) {
-			if (lang && hljs.getLanguage(lang)) {
-				try {
-					return hljs.highlight(str, {
-						language: lang,
-					}).value
-				} catch (__) {}
-			}
+  const data = await getData(params.id)
+  const md = new MarkdownIt({
+    highlight: function (str, lang) {
+      if (lang && hljs.getLanguage(lang)) {
+        try {
+          return hljs.highlight(str, {
+            language: lang
+          }).value
+        } catch (__) {}
+      }
 
-			return '' // use external default escaping
-		},
-	})
-	let navContent = ''
-	md.use(markdownItAnchor, {
-		permalinkSymbol: '#',
-	}).use(markdownItTocDoneRight, {
-		containerId: 'toc', //生成的容器的ID，这样最后返回来的字符串是 <nav id="toc"><nav/>
-		listType: 'ol', //导航列表使用ul还是ol
-		listClass: 'md-list', //li标签的样式名
-		linkClass: 'md-link', //a标签的样式名
-		callback: (html: any) => {
-			navContent = html
-			//   if (tocContent.value) return;
-			//   tocContent.value = html;
-		},
-	})
-	return (
-		<>
-			<div className="bg-white py-14 flex justify-center gap-4">
-				<div
-					className="max-w-[60vw] mx-auto markdown-body"
-					dangerouslySetInnerHTML={{
-						__html: md.render(data.content_md),
-					}}
-				></div>
-				<div>
-					<div className="right-title">目录</div>
-					<div
-						className="toc w-[20vw] right-content"
-						dangerouslySetInnerHTML={{
-							__html: navContent,
-						}}
-					></div>
-				</div>
-			</div>
-			<div className="bg-white py-14 flex justify-center gap-4">
-				<WalineWrapper />
-			</div>
-		</>
-	)
+      return '' // use external default escaping
+    }
+  })
+  let navContent = ''
+  md.use(markdownItAnchor, {
+    permalinkSymbol: '#'
+  }).use(markdownItTocDoneRight, {
+    containerId: 'toc', //生成的容器的ID，这样最后返回来的字符串是 <nav id="toc"><nav/>
+    listType: 'ol', //导航列表使用ul还是ol
+    listClass: 'md-list', //li标签的样式名
+    linkClass: 'md-link', //a标签的样式名
+    callback: (html: any) => {
+      navContent = html
+      //   if (tocContent.value) return;
+      //   tocContent.value = html;
+    }
+  })
+  return (
+    <>
+      <div className="bg-white py-14 flex justify-center gap-4">
+        <div
+          className="max-w-[60vw] mx-auto markdown-body"
+          dangerouslySetInnerHTML={{
+            __html: md.render(data.content_md)
+          }}
+        ></div>
+        <div>
+          <div className="right-title">目录</div>
+          <div
+            className="toc w-[20vw] right-content"
+            dangerouslySetInnerHTML={{
+              __html: navContent
+            }}
+          ></div>
+        </div>
+      </div>
+      <div className="bg-white py-14 flex justify-center gap-4">
+        <WalineWrapper />
+      </div>
+    </>
+  )
 }
