@@ -82,5 +82,8 @@
       "eslint --cache --fix"
     ],
     "*.{js,jsx,ts,tsx,md,html,css,lees,scss,sass}": "prettier --write"
+  },
+  "volta": {
+    "node": "20.12.0"
   }
 }
