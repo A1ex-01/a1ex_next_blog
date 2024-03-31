@@ -13,3 +13,5 @@ export const getRandomColor = () => {
 // start a f2 for feature
 // start a r1 for release
 // start a r2 for release
+
+// start a h1 for hotfix
