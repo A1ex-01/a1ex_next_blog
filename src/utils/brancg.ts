@@ -6,3 +6,4 @@ export const getRandomColor = () => {
 }
 
 // git add flow on feature
+// git add release v1.0.0
