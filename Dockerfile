@@ -8,9 +8,11 @@ WORKDIR /app
 # COPY package.json ./
 # 复制项目文件到工作目录
 COPY . .
-
+RUN npm install pnpm -g
 # 安装项目依赖
-RUN yarn --registry=https://registry.npm.taobao.org
+RUN pnpm install
+
+RUN pnpm run build
 
 
 # RUN yarn run build
@@ -18,4 +20,4 @@ RUN yarn --registry=https://registry.npm.taobao.org
 # COPY .next ./.next
 # 启动应用程序
 # CMD ["yarn", "run", "build"]
-CMD ["yarn", "run", "start"]
+CMD ["pnpm", "run", "start"]

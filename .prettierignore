@@ -1,0 +1,11 @@
+# Ignore artifacts:
+build
+coverage
+
+# Ignore all HTML files:
+**/*.html
+
+# .开头的任何文件
+.*
+# 排除 .gitignore 本身
+!/.gitignore

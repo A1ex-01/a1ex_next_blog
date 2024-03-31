@@ -1,6 +1,7 @@
 'use client'
-import { useRef } from 'react'
+
+import React from 'react'
 
 export default function LoginLayout({ children }: { children: React.ReactNode }) {
-	return <div className="w-full">{children}</div>
+  return <div className="w-full">{children}</div>
 }
