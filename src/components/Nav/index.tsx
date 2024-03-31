@@ -90,7 +90,11 @@ export default function Nav() {
       }}
     >
       <div className="w-[1240px] flex justify-between h-full mx-auto">
-        <h1 className=" flex justify-center items-center font-[500] text-lg">a1ex`s blog</h1>
+        <Link href={'/'}>
+          <h1 className="flex justify-center items-center font-[500] text-lg h-[64px] ">
+            a1ex`s blog
+          </h1>
+        </Link>
         <div className="flex h-full">
           {config.map((item) => (
             <Link

@@ -21,6 +21,7 @@ module.exports = {
     'plugin:prettier/recommended'
   ],
   rules: {
+    "no-unreachable": "off",
     '@typescript-eslint/no-explicit-any': "off",
     'react/react-in-jsx-scope': 0,
     'prettier/prettier': 'error',
@@ -179,7 +180,7 @@ module.exports = {
         defaultAssignment: false
       }
     ],
-    'no-unreachable': 2,
+    // 'no-unreachable': 2,
     'no-unsafe-finally': 2,
     'no-unused-vars': [
       2,

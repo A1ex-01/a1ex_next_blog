@@ -3,6 +3,7 @@ import { getTagList } from '@/api/tag'
 import { IPost, ITag } from '@/api/types'
 import Link from 'next/link'
 import PostList from './home/_components/PostList'
+import { redirect } from 'next/navigation'
 interface IData {
   posts: IPost[]
   page: number
@@ -29,6 +30,7 @@ async function useGetData(page: number): Promise<IData> {
   }
 }
 export default async function Home() {
+  return redirect('/home')
   const res = await useGetData(1)
   return (
     <>

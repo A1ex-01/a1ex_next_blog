@@ -49,14 +49,14 @@ export default async function Post({
   })
   return (
     <>
-      <div className="bg-white py-14 flex justify-center gap-4">
+      <div className="bg-white py-14 flex justify-center gap-4 items-start ">
         <div
-          className="max-w-[60vw] mx-auto markdown-body"
+          className="w-[60%] mx-auto markdown-body"
           dangerouslySetInnerHTML={{
             __html: md.render(data.content_md)
           }}
         ></div>
-        <div>
+        <div className="right">
           <div className="right-title">目录</div>
           <div
             className="toc w-[20vw] right-content"
