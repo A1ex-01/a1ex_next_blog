@@ -5,3 +5,6 @@ export const getRandomColor = () => {
   return `rgb(${r},${g},${b})`
 }
 // fix bug on fix-test
+
+// git add flow on feature
+// git add release v1.0.0
