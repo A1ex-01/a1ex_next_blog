@@ -23,14 +23,11 @@ import FormContext from './formContext'
 export default function Item(props) {
   const { children, name } = props
   const context = useContext(FormContext)
-  console.log('🚀 a1ex~ context:', context)
   function getControlled(childProps = {}) {
-    console.log('🚀 a1ex~ context.getFieldValue(name):', context.getFieldValue(name))
     return {
       ...childProps,
       value: context.getFieldValue(name),
       onChange: (e) => {
-        console.log('🚀 a1ex~ e:', e)
         context.up(name, e.target.value)
       }
     }

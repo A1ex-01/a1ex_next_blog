@@ -1,7 +1,12 @@
 import { IFriend, IFriendType } from '@/api/types'
 import Link from 'next/link'
 import { getFriendList, getFriendType } from '../../api/friend'
-
+import { Metadata } from 'next'
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: `友链 - a1ex\`s blog`
+  }
+}
 async function useGetData(): Promise<
   (IFriendType & {
     children: IFriend[]

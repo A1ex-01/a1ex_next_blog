@@ -59,7 +59,6 @@ export default function Nav() {
   const path = usePathname()
   // 固定头部
   const [scroll, setScroll] = useState(0)
-  console.log('🚀 ~ Nav ~ scroll:', scroll)
   const handleScroll = () => setScroll(document.documentElement.scrollTop)
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)

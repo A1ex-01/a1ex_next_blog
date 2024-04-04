@@ -1,5 +1,6 @@
 import '@/app/globals.css'
 import { IPost } from '../../api/types'
+import Link from 'next/link'
 export default function PostCard({ post }: { post: IPost }) {
   return (
     <article
@@ -11,11 +12,11 @@ export default function PostCard({ post }: { post: IPost }) {
       <div className="h-[210px]">
         <img
           src={`https://a1ex.vip/api/article/cover/${post.id}`}
-          className="w-full h-[210px] bg-cover"
+          className="w-full h-[210px] object-cover"
           alt={post.title}
         />
       </div>
-      <div className="w-full h-full p-4 box-border">
+      <Link href={`/post/${post.id}`} className="w-full h-full p-4 box-border">
         <p className="text-2xl">{post.title}</p>
         <p className="text-[#666] text-lg h-[81px] my-2">{post.desc}</p>
         <div className="flex gap-2 items-center">
@@ -26,7 +27,7 @@ export default function PostCard({ post }: { post: IPost }) {
           />
           <span className="text-[#666] text-sm">发布于 {post.createdAt}</span>
         </div>
-      </div>
+      </Link>
     </article>
   )
 }

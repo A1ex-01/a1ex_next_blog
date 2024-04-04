@@ -7,8 +7,17 @@ import hljs from 'highlight.js'
 import 'highlight.js/styles/github.css'
 import './styles.scss'
 import WalineWrapper from './_components/WalineWrapper'
-async function getData(id: string) {
+import { cache } from 'react'
+import { Metadata } from 'next'
+
+const getData = cache(async function getData(id: string) {
   return getPostDetail(id)
+})
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const res = await getData(params.id)
+  return {
+    title: `${res.title} - a1ex\`s blog`
+  }
 }
 export default async function Post({
   params

@@ -1,8 +1,8 @@
 import { getTagList } from '@/api/tag'
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-export const fetchTagList = createAsyncThunk<any, string>('tag', async (payload) => {
+export const fetchTagList = createAsyncThunk<any, string>('tag', async () => {
   const res = await getTagList()
-  console.log('🚀 a1ex~ res:', res)
+  console.log('🚀 ~ fetchTagList ~ res:', res)
 })
 const initialState = {
   value: 1

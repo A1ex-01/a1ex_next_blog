@@ -198,3 +198,7 @@ body {
 .icon-xiangxia:before {
   content: '\e636';
 }
+
+a:hover {
+  color: --main-color;
+}

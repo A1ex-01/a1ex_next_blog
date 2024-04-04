@@ -3,11 +3,19 @@ import { getTagList } from '@/api/tag'
 import { IPost, ITag } from '@/api/types'
 import Link from 'next/link'
 import PostList from './_components/PostList'
+import { Metadata } from 'next'
 interface IData {
   posts: IPost[]
   page: number
   pageSize: number
   count: number
+}
+export const metadata: Metadata = {
+  title: 'a1ex`s blog',
+  description: '前端学习分享，next.js + tailwindcss',
+  icons: {
+    other: [{ rel: 'preload', url: 'https://a1ex.vip/api/default-cover' }]
+  }
 }
 async function useGetData(page: number): Promise<IData> {
   const pageSize = 5

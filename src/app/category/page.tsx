@@ -2,10 +2,16 @@ import { ICategory } from '@/api/types'
 import MiniLink from '@/components/MiniLink'
 import { getCategoryList } from '../../api/category'
 import { getPostList } from '../../api/post'
+import { Metadata } from 'next'
 interface IData {
   categoryList: (ICategory & {
     count: number
   })[]
+}
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: `分类 - a1ex\`s blog`
+  }
 }
 async function useGetData(): Promise<IData> {
   const { rows: categoryRows } = await getCategoryList()

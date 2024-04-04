@@ -3,13 +3,22 @@ import { getTagList } from '@/api/tag'
 import { IPost, ITag } from '@/api/types'
 import PostList from '../_components/PostList'
 import { redirect } from 'next/navigation'
+import { Metadata } from 'next'
+import { cache } from 'react'
 interface IData {
   posts: IPost[]
   page: number
   pageSize: number
   count: number
 }
-async function useGetData(page: number): Promise<IData> {
+
+export async function generateMetadata({ params }: any): Promise<Metadata> {
+  const res = await useGetData(+params?.page)
+  return {
+    title: `首页 ${res.page} / ${Math.ceil(res.count / res.pageSize)}页 - a1ex\`s blog`
+  }
+}
+const useGetData = cache(async function (page: number): Promise<IData> {
   const pageSize = 5
   const { rows, count } = await getPostList({
     offset: (page - 1) * pageSize,
@@ -27,7 +36,7 @@ async function useGetData(page: number): Promise<IData> {
     page,
     pageSize
   }
-}
+})
 export default async function Home({
   params: { page }
 }: {
@@ -35,7 +44,6 @@ export default async function Home({
     page: string
   }
 }) {
-  console.log('🚀 ~ page:', page)
   if (+page === 1) return redirect('/home')
   const res = await useGetData(+page)
   return (

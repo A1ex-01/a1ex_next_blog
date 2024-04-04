@@ -3,8 +3,10 @@ import TimeLine from '@/components/TimeLine'
 import { refixByMonth } from '@/utils/refixByMouth'
 import Pagination from '@/components/Pagination'
 import { redirect } from 'next/navigation'
+import { cache } from 'react'
+import { Metadata } from 'next'
 
-async function getData(id: string) {
+const getData = cache(async function getData(id: string) {
   const limit = 8
   const offset = (+id - 1) * limit
   const { rows, count } = await getArchiveList({
@@ -16,6 +18,13 @@ async function getData(id: string) {
     offset,
     limit,
     count
+  }
+})
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const { id } = params
+  const { count, limit } = await getData(id)
+  return {
+    title: `归档 ${id}/${Math.ceil(count / limit)}页 - a1ex\`s blog`
   }
 }
 export default async function Archive({

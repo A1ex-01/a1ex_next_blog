@@ -35,7 +35,6 @@ const Form = (props: {
 
   // 使用 useMemo 防止重复创建
   const fieldContextValue = useMemo(() => ({ ...formInstance }), [formInstance])
-  console.log('🚀 a1ex~ fieldContextValue:', fieldContextValue)
 
   return (
     <form

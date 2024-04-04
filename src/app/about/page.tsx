@@ -1,6 +1,12 @@
 import 'github-markdown-css'
 import MarkdownIt from 'markdown-it'
 import { getMeInfo } from '../../api/about'
+import { Metadata } from 'next'
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: `关于我 - a1ex\`s blog`
+  }
+}
 async function useGetData(): Promise<{
   desc: string
 }> {

@@ -2,10 +2,16 @@ import { ITag } from '@/api/types'
 import MiniLink from '@/components/MiniLink'
 import { getTagList } from '../../api/tag'
 import { getPostList } from '../../api/post'
+import { Metadata } from 'next'
 interface IData {
   tagList: (ITag & {
     count: number
   })[]
+}
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: `标签 - a1ex\`s blog`
+  }
 }
 async function useGetData(): Promise<IData> {
   const { rows: tagRows } = await getTagList()
