@@ -35,4 +35,6 @@ yarn-error.log*
 next-env.d.ts
 
 # 隐藏api
-/src/app/api
+# /src/app/api
+
+.eslintcache
