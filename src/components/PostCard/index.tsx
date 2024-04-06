@@ -17,7 +17,7 @@ export default function PostCard({ post, index }: { post: IPost; index: number }
         />
         <div className="content py-2">
           <time className="text-sm text-font-sub-color">
-            {dayjs(post.createdAt).format('YYYY-DD-MM HH:mm')}
+            {dayjs(post.createdAt).format('YYYY-MM-DD HH:mm')}
           </time>
           <Link
             href={`/post/${post.id}`}
