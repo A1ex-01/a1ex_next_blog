@@ -9,6 +9,7 @@ WORKDIR /app
 # 复制项目文件到工作目录
 COPY . .
 RUN npm install pnpm -g
+RUN pnpm config set registry https://registry.npmmirror.com/
 # 安装项目依赖
 RUN pnpm install
 
