@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   }
 }
 const useGetData = cache(async function (page: number): Promise<IData> {
-  const pageSize = 5
+  const pageSize = 6
   const { rows, count } = await getPostList({
     offset: (page - 1) * pageSize,
     limit: pageSize

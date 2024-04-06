@@ -5,13 +5,15 @@ export default function Pagination({
   page,
   count,
   pageSize,
-  pathRoot = 'home'
+  pathRoot = 'home',
+  ...props
 }: IPagination & {
   pathRoot?: string
+  props: any
 }) {
   const size = Math.ceil(count / pageSize)
   return (
-    <div className="text-main-color flex gap-1 font-bold">
+    <div className="text-main-color flex gap-1 font-bold mx-auto" {...props}>
       <Link
         href={`/${pathRoot}/${page - 1}`}
         className=""

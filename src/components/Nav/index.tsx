@@ -10,6 +10,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useMemo, useState } from 'react'
 // import HomeJson from '@/assets/lottie/home.json'
+import favicon from '@/app/favicon.ico'
 const config = [
   {
     name: '首页',
@@ -80,7 +81,7 @@ export default function Nav() {
   // }, [ref])
   return (
     <div
-      className="w-full z-10 relative h-16 filter-box shadow-md shadow-main-color"
+      className="w-full z-10 relative h-20"
       style={{
         position: isFix ? 'fixed' : 'static',
         top: 0,
@@ -88,9 +89,10 @@ export default function Nav() {
         zIndex: 999
       }}
     >
-      <div className="w-[1240px] flex justify-between h-full mx-auto">
-        <Link href={'/'}>
-          <h1 className="flex justify-center items-center font-[500] text-lg h-[64px] ">
+      <div className="w-[1240px] flex justify-between h-full mx-auto rounded-b-lg bg-white filter-box shadow-md shadow-main-color p-4">
+        <Link href={'/'} className="flex gap-2">
+          <Image src={favicon} width={38} height={38} className="object-contain" alt="logo" />
+          <h1 className="flex justify-center items-center font-[500] text-lg h-full font-bold">
             a1ex`s blog
           </h1>
         </Link>

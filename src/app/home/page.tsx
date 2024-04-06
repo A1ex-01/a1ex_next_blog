@@ -12,13 +12,10 @@ interface IData {
 }
 export const metadata: Metadata = {
   title: 'a1ex`s blog',
-  description: '前端学习分享，next.js + tailwindcss',
-  icons: {
-    other: [{ rel: 'preload', url: 'https://a1ex.vip/api/default-cover' }]
-  }
+  description: '前端学习分享，next.js + tailwindcss'
 }
 async function useGetData(page: number): Promise<IData> {
-  const pageSize = 5
+  const pageSize = 6
   const { rows, count } = await getPostList({
     offset: (page - 1) * pageSize,
     limit: pageSize
@@ -29,6 +26,7 @@ async function useGetData(page: number): Promise<IData> {
       tagRows.find((item: ITag) => item.id === id)
     )
   })
+  console.log('🚀 ~ rows.map ~ rows:', rows.length)
   return {
     posts: rows,
     count: count,
@@ -39,11 +37,15 @@ async function useGetData(page: number): Promise<IData> {
 export default async function Home() {
   const res = await useGetData(1)
   return (
-    <>
-      <div className="bg-[url('https://a1ex.vip/api/default-cover')] bg-fixed bg-cover">
-        <PostList {...res} />
+    <div className="bg-[url('https://a1ex.vip/api/default-cover')] bg-fixed bg-cover">
+      <div className="w-full bg-white/90">
+        <div className="w-[1240px] mx-auto">
+          <div>
+            <PostList {...res} />
+          </div>
+        </div>
       </div>
-      <div className="bg-[url('https://a1ex.vip/api/default-cover')] bg-fixed bg-cover">
+      <div>
         <div className="h-[145px] bg-white/90 w-full flex flex-col items-center justify-center box-border border-t-8 border-solid border-main-color">
           <p>[a1ex的博客]</p>
           <div>
@@ -62,6 +64,6 @@ export default async function Home() {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   )
 }
