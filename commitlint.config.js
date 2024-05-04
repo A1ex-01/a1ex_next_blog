@@ -13,9 +13,9 @@ module.exports = {
       2,
       'always',
       ['build', 'ci', 'docs', 'feat', 'fix', 'perf', 'refactor', 'revert', 'style', 'test']
-    ],
-    'scope-empty': [2, 'never'],
-    'subject-empty': [2, 'never']
+    ]
+    // 'scope-empty': [2, 'never'],
+    // 'subject-empty': [2, 'never']
   },
   prompt: {
     settings: {},
