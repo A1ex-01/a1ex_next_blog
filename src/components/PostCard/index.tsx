@@ -3,6 +3,7 @@ import Image from 'next/image'
 import dayjs from 'dayjs'
 import '@/app/globals.css'
 import { IPost } from '../../api/types'
+import { Icon } from '@iconify/react'
 // import CategoryIcon from '@/assets/icon/category.svg'
 // import TagIcon from '@/assets/icon/tag.svg'
 import Link from 'next/link'
@@ -11,7 +12,7 @@ export default function PostCard({ post, index }: { post: IPost; index: number }
     <div key={post.id} className={' flex items-center w-[32.2%]'}>
       <div className="w-full">
         <img
-          className="w-full object-cover rounded-2xl"
+          className="w-full object-cover rounded-2xl h-[266px]"
           src={`https://a1ex.vip/api/article/cover/${post.id}`}
           alt=""
         />
@@ -19,6 +20,7 @@ export default function PostCard({ post, index }: { post: IPost; index: number }
           <time className="text-sm text-font-sub-color">
             {dayjs(post.createdAt).format('YYYY-MM-DD HH:mm')}
           </time>
+          <Icon icon="carbon:category" width="12em" height="12em" />
           <Link
             href={`/post/${post.id}`}
             className="text-font-color text-xl font-[500] py-1 line-clamp-1 overflow-hidden text-ellipsis"

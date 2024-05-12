@@ -65,7 +65,7 @@ export default async function Post({
             __html: md.render(data.content_md)
           }}
         ></div>
-        <div className="right">
+        <div className="right-c">
           <div className="right-title">目录</div>
           <div
             className="toc w-[20vw] right-content"
